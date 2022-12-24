@@ -28,12 +28,12 @@ class Person {
     }
 
     // Конструкотр копирования
-    Person(Person k) {
-        this.surname = k.surname;
-        this.sex = k.sex;
-        this.name = k.name;
-        this.age = k.age;
-
+    Person (Person copy) {
+        this.surname = copy.surname;
+        this.sex = copy.sex;
+        this.name = copy.name;
+        this.age = copy.age;
+        this.hobbies = copy.hobbies;
     }
 
     //Get
@@ -56,7 +56,7 @@ class Person {
     public String getPatronymic() {
         return patronymic;
     }
-//Set
+  //Set
 
     public void setAge(int age) {
         this.age = age;
@@ -88,23 +88,23 @@ class Person {
         this.hobbies.remove(hobby);
     }
 
+
     @Override
     public String toString() {
-        return this.name + " " + this.surname +
-                " " + this.patronymic + ", возраст: " + this.age +
-                "Список хобби:" + this.hobbies;
+        return this.name + " " + this.surname + " " + this.patronymic + ", возраст: " + this.age + "\nСписок хобби:" + this.hobbies;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(Object p) {
+        if (this == p) {
             return true;
         }
 
-        if (o == null || getClass() != o.getClass()) {
+        if (p == null || getClass() != p.getClass()) {
             return false;
         }
-        Person person = (Person) o;
+
+        Person person = (Person) p;
         return name.equals(person.name) &&
                 surname.equals(person.surname) &&
                 patronymic.equals(person.patronymic) &&
