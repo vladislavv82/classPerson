@@ -19,10 +19,11 @@ class Person {
     }
 
     //Конструктор с параметрами
-    public Person(String name, String surname, String patronymic, int age) {
+    public Person(String name, String surname, String patronymic, String sex, int age) {
         this.name = name;
         this.surname = surname;
         this.patronymic = patronymic;
+        this.sex = sex;
         this.age = age;
         hobbies = new ArrayList<Hobby>();
     }
