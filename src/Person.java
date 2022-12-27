@@ -1,11 +1,12 @@
 import java.util.ArrayList;
 class Person {
-    private String name;
-    private String surname;
-    private String patronymic;
+    protected final String hiddenString = "Скрытое поле Человек";
+    protected  String name;
+    protected  String surname;
+    protected  String patronymic;
 
-    private int age;
-    private String sex;
+    protected int age;
+    protected String sex;
     private ArrayList<Hobby> hobbies;
 
     //Конструктор по умолчанию
@@ -57,7 +58,7 @@ class Person {
     public String getPatronymic() {
         return patronymic;
     }
-  //Set
+    //Set
 
     public void setAge(int age) {
         this.age = age;
@@ -88,7 +89,15 @@ class Person {
     public void removeHobby(Hobby hobby) {
         this.hobbies.remove(hobby);
     }
+    //что то делает
 
+    public void upcastDemonstration() {
+        System.out.println("\nМетод upcastDemonstration не переопределен в классе-наследнике Employee");
+    }
+
+    public void make(){
+        System.out.println("\nЧеловек что-то делает");
+    }
 
     @Override
     public String toString() {
